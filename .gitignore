@@ -1,0 +1,5 @@
+# SageMath parsed files
+*.sage.py
+
+# Annoying mac things
+**/.DS_Store
