@@ -241,10 +241,10 @@ else:
     
 for psi in psi_list:
     K = E0(psi(K))
-    recovered_key = find_secret_key_pairing(K, PA, QA, ea)
     recovered_isogeny = E0.isogeny(K, algorithm="factored")
     recovered_curve = recovered_isogeny.codomain()
     if recovered_curve == EA:
+        recovered_key = find_secret_key_pairing(K, PA, QA, ea)
         print(f"Secret key recovered: {recovered_key}")
         print(f"The attack is successful: {recovered_key == alice_private}")
         break
